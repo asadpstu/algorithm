@@ -1,0 +1,36 @@
+<script type="text/javascript">
+
+    var n=4;
+	var emptyArray = [];
+	emptyArray.push(0);
+	for(var i=1;i<=n-1;i++)
+		{
+
+		   if(i<2)
+             {
+			   emptyArray.push(i)
+			 }			 
+			 else
+			 {
+			   var count = emptyArray.length;
+			   var prev_first = emptyArray[count-1];
+			   var prev_secound = emptyArray[count-2];
+			   var result = prev_first + prev_secound;
+			   emptyArray.push(result);
+			 }
+		}
+	  console.log(emptyArray)			   	
+	  var count = emptyArray.length;
+	  if(n == 1)
+			{
+				console.log( 1);
+			}
+	  if(n == 0)
+			{
+				console.log( 0 );
+			}
+	  if(count > 1 && n >=2 )
+			{
+				console.log(emptyArray[count-1]);
+			}
+</script>

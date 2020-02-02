@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    //var array = [3,7,4,9,5,2,6,1]
+	//var array = [-7,2,3,8,-10,4,-6,-10,-2,-7,10,5,2,9,-9,-5,3,8]
+	var array = [8,-6,7,10,8,-1,6,2,4,-5,1,10,8,-10,-9,-10,8,9,-2,7,-2,4]
+	var initialSwap = 0;
+	
+	var sorted = 0;
+	while( sorted > -1)
+		{
+		    console.log("print");
+			var currentMin = array[initialSwap];
+			var previous = currentMin;
+			
+			for(var j=initialSwap;j<array.length;j++)
+				{
+					if( array[j] <= currentMin)
+						{
+							currentMin = array[j];
+							var toswap = j;
+						}
+				}
+			array[initialSwap] = currentMin;
+			array[toswap] = previous;
+			initialSwap++;
+
+			
+			sorted++;
+			console.log(array);
+			//checking if sorted or not
+			var checkTrue = 0;
+			var checkFalse = 0;
+			for(var k=0;k<array.length-1;k++)
+			{
+			  if(array[k] <= array[k+1])
+			  {
+				checkTrue = checkTrue + 1;
+			  }
+			  else
+			  {
+				checkFalse = checkFalse + 1;
+			  }
+			}
+			console.log("checkTrue",checkTrue);console.log("checkFalse",checkFalse);
+			console.log(array);
+			if( checkFalse == 0)
+			{
+			  sorted = -2;
+			  console.log("Executed:",array);
+			}
+		}
+		
+</script>

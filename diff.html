@@ -1,0 +1,49 @@
+<script type="text/javascript">
+  var numbers ="2 4 7 8 10"
+  var numArray = numbers.split(" ");
+  var odd = [];
+  var even = [];
+  var evenCount = 0;var oddCount = 0;
+  for(var i=0;i<numArray.length;i++)
+  {
+    if(numArray[i]%2 == 0)
+	{
+	  evenCount++;
+	}
+	else
+	{
+	  oddCount++;
+	}
+		
+  }
+  
+  if(evenCount > oddCount)
+  {
+     console.log("even won");
+    for(var j=0;j<numArray.length;j++)
+    {
+	  if(numArray[j]%2 !=0)
+	  {
+	    console.log(numArray[j]);
+		var index = j;
+		j = numArray.length;
+	  }
+	}
+  }
+  else
+  {
+    console.log("odd won");
+    for(var j=0;j<numArray.length;j++)
+    {
+	  if(numArray[j]%2 ==0)
+	  {
+	    console.log(numArray[j]);
+		var index = j;
+		j = numArray.length;
+	  }
+	}    
+  }
+  
+  console.log(index+1);
+
+</script>
