@@ -1,0 +1,74 @@
+<!--Problem statement GCD 
+INPUT [2,3,4,5,6] 2
+-->
+<script>
+function generalizedGCD()
+{
+    var devisor = [];
+    var arr = [3,6,9,15,27];
+    var probabeGcd = [];
+    for(var i=0;i<arr.length;i++)
+    {
+        for(var j=1;j<=arr[i];j++)
+        {
+            if(arr[i] % j == 0)
+            {
+                devisor.push(j);         
+            }
+        }
+        probabeGcd.push({"node":arr[i],"candidate":devisor,"lenth":devisor.length});
+        devisor = [];
+    }
+
+    var NumberOfIteration = probabeGcd.length;
+    //console.log(NumberOfIteration);
+    //console.log(probabeGcd[0].candidate);
+    var k=1;
+    var count = 1;
+    var probabaleGcd = 1;
+    for(var w=0;w<probabeGcd[0].candidate.length;w++)
+    {
+      var gcd = probabeGcd[0].candidate[w];
+      //debugger
+      // As 1 is the common devisor so keep it constant
+      // if there is no other GCD then, i will return 1;
+      if(gcd == 1)
+      {
+
+      }
+      else
+      {
+        for(var check=1;check<NumberOfIteration;check++)
+        {
+            if(probabeGcd[check].candidate.includes(Number(gcd)) === true)
+            {
+                count++;    
+            }
+
+        }
+      }
+      if(count==NumberOfIteration)
+      {
+        probabaleGcd = gcd;
+      }
+      count = 1;
+    }
+
+    if(probabaleGcd>1)
+    {
+        console.log("GCD (Greated common divisor ) :",probabaleGcd);
+    }
+    else
+    {
+        console.log("GCD (Greated common divisor ) :",1);
+    }
+
+        
+    
+
+}
+
+generalizedGCD();
+
+
+</script>
